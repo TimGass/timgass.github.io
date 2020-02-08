@@ -1,0 +1,216 @@
+#portfolioPage {
+  height: 100%;
+
+  .hero-overlay {
+    background-image: url('../assets/whiteboard.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+    height: 100vh;
+    position: relative;
+
+    .hero {
+      background-color: rgba($color: #211200, $alpha: 0.35);
+      height: 100vh;
+    }
+  }
+
+  ul {
+    list-style: none;
+    padding: 0px;
+    display: block;
+    float: inherit;
+
+    li {
+      margin: 0;
+      display: inline-block;
+
+      &:nth-child(3n) {
+        a {
+          margin-left: 3.5vw;
+        }
+      }
+
+      &:nth-child(3n - 1) {
+        width: 26vw;
+
+        a {
+          margin: 5vw 0 2vw 0;
+        }
+      }
+
+      &:nth-child(3n - 2) {
+        width: 37vw;
+      }
+
+      &:nth-child(n + 4) {
+        a {
+          margin-top: 1.5vw;
+        }
+      }
+
+      a {
+        display: block;
+        margin-right: 3.5vw;
+        margin-left: 7.5vw;
+        width: 26vw;
+        margin-top: 5vw;
+        margin-bottom: 2vw;
+        text-decoration: none;
+        position: relative;
+        border: 1px solid #5c5b5c;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8),
+          0 6px 20px 0 rgba(0, 0, 0, 0.2);
+
+        div.project-description {
+          display: none;
+          position: absolute;
+          top: 10vw;
+          right: 10vw;
+          bottom: 10vw;
+          left: 10vw;
+          color: #ffffff;
+
+          p {
+            padding: 0;
+          }
+        }
+
+        img {
+          width: 100%;
+          height: 26vw;
+          display: block;
+          position: relative;
+          background-attachment: local;
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+          z-index: -1;
+
+          &#park {
+            background-image: url('../assets/Park-A-Lot.png');
+          }
+
+          &#chronophobia {
+            background-image: url('../assets/Chronophobia.png');
+            background-position: left;
+          }
+
+          &#acquali {
+            background-image: url('../assets/Acquali.png');
+            background-position: 57% top;
+          }
+
+          &#goals {
+            background-image: url('../assets/Goals.png');
+            background-position: 100% top;
+          }
+
+          &#github {
+            background-image: url('../assets/gitHub.png');
+            background-position: 13% top;
+          }
+
+          &#powell {
+            background-image: url('../assets/PowellPeralta.png');
+            background-position: right;
+          }
+        }
+
+        &:hover {
+          background-color: rgba($color: #000000, $alpha: 0.8);
+          div.project-description {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  #portfolioPage {
+    ul {
+      li {
+        width: 45vw;
+        display: inline-block;
+
+        &:nth-child(2n + 1) {
+          width: 45vw;
+          a {
+            margin: 5vw 3.5vw 2vw 7.5vw;
+          }
+        }
+
+        &:nth-child(2n) {
+          width: 45vw;
+          float: right;
+
+          a {
+            margin: 5vw 7.5vw 2vw 0;
+          }
+        }
+
+        a {
+          width: 40vw;
+
+          img {
+            height: 40vw;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 767px) {
+  #portfolioPage {
+    ul {
+      li {
+        a {
+          div.project-description {
+            top: 10vw;
+            right: 15vw;
+            bottom: 8vw;
+            left: 14.5vw;
+            width: 20vw;
+          }
+        }
+      }
+    }
+  }
+
+  #portfolioPage ul li:last-child a div.project-description {
+    top: 10vw;
+    right: 15vw;
+    bottom: 8vw;
+    left: 12.5vw;
+    width: 20vw;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  #portfolioPage {
+    ul {
+      li {
+        a {
+          div.project-description {
+            top: 7vw;
+            right: 7vw;
+            bottom: 5vw;
+            left: 5vw;
+          }
+        }
+      }
+    }
+  }
+
+  #portfolioPage ul li:last-child a div.project-description {
+    top: 2vw;
+    right: 7vw;
+    bottom: 5vw;
+    left: 7vw;
+  }
+}

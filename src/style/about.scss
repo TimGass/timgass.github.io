@@ -1,0 +1,93 @@
+#aboutPage {
+  .hero-overlay {
+    background-image: url('../assets/mountain.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+    height: 100vh;
+
+    .hero {
+      background-color: rgba($color: #211200, $alpha: 0.1);
+      height: 100vh;
+    }
+  }
+
+  div.content {
+    font-size: 1.2em;
+    display: block;
+    font-family: 'Montserrat';
+    margin: 0 7.5vw;
+    text-align: justify;
+    padding-bottom: 3vh;
+
+    img {
+      margin-right: 2vw;
+      width: 30vw;
+      display: inline-block;
+      border: 2px solid #000000;
+    }
+
+    div.topText {
+      width: 52vw;
+      display: inline-block;
+
+      h1 {
+        margin-top: 5vh;
+        font-family: 'Raleway';
+      }
+
+      p {
+        padding: 0;
+        margin-top: 0;
+        padding-bottom: 3vw;
+      }
+    }
+
+    div.bottomText {
+      width: 100%;
+
+      p {
+        padding: 0;
+        margin-top: 0;
+        padding-bottom: 3vw;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  #aboutPage {
+    div.content {
+      text-align: left;
+
+      img {
+        width: 60vw;
+        margin-top: 10vh;
+        margin-left: 12.5vw;
+      }
+
+      div.topText {
+        width: 100%;
+        margin-left: 2vw;
+      }
+
+      div.bottomText {
+        margin-left: 2vw;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 479px) {
+  #aboutPage {
+    div.content {
+      img {
+        width: 85vw;
+        margin-top: 5vh;
+        margin-left: 0;
+      }
+    }
+  }
+}

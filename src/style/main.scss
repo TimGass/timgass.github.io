@@ -1,0 +1,117 @@
+@import './header.scss';
+@import './portfolio.scss';
+@import './skills.scss';
+@import './about.scss';
+@import './footer.scss';
+@import '~normalize-scss';
+@import url('https://fonts.googleapis.com/css?family=Raleway|Montserrat&display=swap');
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Raleway', 'Montserrat', Avenir, sans-serif;
+}
+
+body {
+  margin: 0;
+  font-size: 100%;
+  position: absolute;
+  max-width: 1920px;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+  margin-top: 10vh;
+
+  &.title {
+    margin-top: 0em;
+    font-size: 5em;
+    letter-spacing: 0.05em;
+    font-weight: lighter;
+    text-shadow: 0.02em 0.02em 0.02em rgba(0, 0, 0, 1);
+  }
+}
+
+p {
+  padding: 0 3em;
+}
+
+a.descriptionLink {
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  display: block;
+  position: relative;
+  bottom: -65.5vh;
+
+  img.arrow-down {
+    width: 2.5em;
+    display: inline-block;
+    filter: drop-shadow(0.1em 0.1em 0.1em #000000);
+  }
+}
+
+body::-webkit-scrollbar {
+  width: 0 !important;
+}
+
+div.scrollbarThumb {
+  background-color: rgba(255, 255, 255, 0.3);
+  width: 1em;
+  height: 4vh;
+  position: fixed;
+  cursor: grab;
+  z-index: 2;
+
+  &:active {
+    cursor: grabbing;
+  }
+}
+
+div.scrollbarTrack {
+  width: 1em;
+  height: 100%;
+  position: absolute;
+  right: 0px;
+  display: block;
+  float: right;
+  overflow: hidden;
+}
+
+div.content {
+  h1 {
+    color: black;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  html,
+  body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+  h1.title {
+    font-size: 3em;
+  }
+
+  a.descriptionLink {
+    bottom: -8vw;
+  }
+
+  div.scrollbarThumb {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 479px) {
+  a.descriptionLink {
+    bottom: -52vh;
+  }
+}
+
+@media only screen and (min-width: 1921px) {
+  body {
+    display: block;
+    width: 1920px;
+  }
+}

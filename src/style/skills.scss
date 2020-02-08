@@ -1,0 +1,73 @@
+#skillsPage {
+  .hero-overlay {
+    background-image: url('../assets/books.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+    height: 100vh;
+
+    .hero {
+      background-color: rgba($color: #211200, $alpha: 0.2);
+      height: 100vh;
+    }
+  }
+
+  div.content {
+    font-size: 1.2em;
+    display: block;
+    font-family: 'Montserrat';
+    margin: 0 7.5vw;
+
+    ul {
+      list-style: none;
+      padding: 0;
+
+      li {
+        p {
+          font-family: 'Montserrat  ';
+          text-align: justify;
+        }
+      }
+    }
+
+    h1 {
+      font-family: 'Raleway';
+    }
+
+    h2 {
+      font-family: 'Raleway';
+    }
+
+    a {
+      margin: 5vh 0;
+      text-decoration: none;
+      font-family: 'Raleway';
+      font-weight: bold;
+      text-align: center;
+      display: block;
+      color: #000000;
+      font-size: 2em;
+    }
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  #skillsPage {
+    div.content {
+      ul {
+        li {
+          h2 {
+            margin-bottom: 1.5vh;
+          }
+          p {
+            margin-top: 0;
+            text-align: left;
+            padding: 0 0 0 1em;
+          }
+        }
+      }
+    }
+  }
+}
