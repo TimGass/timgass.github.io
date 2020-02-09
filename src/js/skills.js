@@ -4,7 +4,7 @@ import { HashLink as Link } from 'react-router-hash-link';
 import arrows from '../assets/double-down.png';
 import Header from './header';
 import Footer from './footer';
-import resume from '../assets/PublicResume.pdf';
+import resume from '../assets/Resume.pdf';
 
 class Skills extends Component {
   render() {

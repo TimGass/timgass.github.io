@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 
-import resume from '../assets/PublicResume.pdf';
+import resume from '../assets/Resume.pdf';
 
 class Footer extends Component {
   render() {

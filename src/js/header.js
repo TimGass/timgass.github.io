@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import $ from 'jquery';
 
-import resume from '../assets/PublicResume.pdf';
+import resume from '../assets/Resume.pdf';
 
 class Header extends Component {
   componentDidMount() {
