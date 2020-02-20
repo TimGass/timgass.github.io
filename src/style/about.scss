@@ -11,6 +11,8 @@
     .hero {
       background-color: rgba($color: #211200, $alpha: 0.1);
       height: 100vh;
+      display: block;
+      position: relative;
     }
   }
 

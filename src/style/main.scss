@@ -1,10 +1,10 @@
+@import '~normalize-scss';
 @import './header.scss';
 @import './portfolio.scss';
 @import './skills.scss';
 @import './about.scss';
 @import './footer.scss';
 @import './projects.scss';
-@import '~normalize-scss';
 @import url('https://fonts.googleapis.com/css?family=Raleway|Montserrat&display=swap');
 
 html {
@@ -45,8 +45,12 @@ a.descriptionLink {
   color: white;
   text-decoration: none;
   display: block;
-  position: relative;
-  bottom: -65vh;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  right: 50%;
+  margin-left: -2.5em;
+  margin-right: -2.5em;
 
   img.arrow-down {
     width: 2.5em;
@@ -88,12 +92,6 @@ div.content {
   }
 }
 
-@media only screen and (min-width: 768px) and (max-width: 1280px) {
-  a.descriptionLink {
-    bottom: -55vh;
-  }
-}
-
 @media only screen and (max-width: 767px) {
   html,
   body {  
@@ -105,7 +103,7 @@ div.content {
   }
 
   a.descriptionLink {
-    bottom: -2.5vw;
+    bottom: 20%;
   }
 
   div.scrollbarThumb {
@@ -115,7 +113,7 @@ div.content {
 
 @media only screen and (max-width: 480px) {
   a.descriptionLink {
-    bottom: -54.5vh;
+    bottom: 10%;
   }
 }
 
