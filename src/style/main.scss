@@ -18,6 +18,8 @@ body {
   position: absolute;
   max-width: 1920px;
   background-color: #fafafa;
+  overflow: -moz-scrollbars-none;
+  overflow-y: scroll;
 }
 
 h1 {
@@ -44,7 +46,7 @@ a.descriptionLink {
   text-decoration: none;
   display: block;
   position: relative;
-  bottom: -66.5vh;
+  bottom: -65vh;
 
   img.arrow-down {
     width: 2.5em;
@@ -121,5 +123,6 @@ div.content {
   body {
     display: block;
     width: 1920px;
+    max-width: 1920px;
   }
 }
