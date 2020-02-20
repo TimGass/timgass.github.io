@@ -1,15 +1,20 @@
 import React, { Component } from 'react';
 import { HashLink as Link } from 'react-router-hash-link';
+import { withContentRect } from 'react-measure';
+import PropTypes from 'prop-types';
 
-import arrows from '../assets/double-down.png';
+import arrow from '../assets/down.png';
 import Header from './header';
 import Footer from './footer';
 import resume from '../assets/Resume.pdf';
 
 class Skills extends Component {
+  constructor(props) {
+    super(props);
+  }
   render() {
     return (
-      <div id="skillsPage" className="pageDiv">
+      <div id="skillsPage" className="pageDiv" ref={this.props.measureRef}>
         <div className="scrollbarTrack">
           <div className="scrollbarThumb" />
         </div>
@@ -18,7 +23,7 @@ class Skills extends Component {
             <Header />
             <h1 className="title">Skills</h1>
             <Link to="#list" className="descriptionLink">
-              <img src={arrows} className="arrow-down" />
+              <img src={arrow} className="arrow-down" />
             </Link>
           </div>
         </div>
@@ -30,8 +35,8 @@ class Skills extends Component {
               <p id="nodeText">
                 Experience with Node, Mongo, Express and modeling tools such as
                 Mongoose. Experience in building multiple REST APIs in Node with
-                the Chronophobia API in the Projects section of this website
-                being a prime example. Also, experienced in deployments of such
+                the Chronophobia API or Park-A-Lot in the Projects section of this website
+                being prime examples. Also, experienced in deployments of such
                 servers to cloud server infrasctructures.
               </p>
             </li>
@@ -50,7 +55,9 @@ class Skills extends Component {
                 Ability to use vanilla JavaScript and multiple frameworks, such
                 as React and Backbone. Experienced in Jquery, AJAX requests, and
                 event handlers. Experience performing dynamic data handling,
-                routing, and dynamic routing.
+                routing, and dynamic routing. Also, experienced in single-page application
+                development with React Router and component and class based programming.
+                Proficient in ES6, and ES7.
               </p>
             </li>
             <li>
@@ -73,4 +80,8 @@ class Skills extends Component {
   }
 }
 
-export default Skills;
+Skills.propTypes = {
+  measureRef: PropTypes.func,
+};
+
+export default withContentRect('bounds')(Skills);

@@ -15,10 +15,10 @@
   }
 
   div.content {
-    font-size: 1.2em;
+    font-size: 1.4em;
     display: block;
     font-family: 'Montserrat';
-    margin: 0 7.5vw;
+    margin: 0 15vw;
 
     ul {
       list-style: none;
@@ -28,6 +28,7 @@
         p {
           font-family: 'Montserrat  ';
           text-align: justify;
+          line-height: 1.6em;
         }
       }
     }
@@ -68,6 +69,14 @@
           }
         }
       }
+    }
+  }
+}
+
+@media only screen and (max-width: 481px) {
+  #skillsPage {
+    .hero-overlay {
+      background-position: 0% top;
     }
   }
 }

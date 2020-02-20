@@ -7,13 +7,13 @@ class Footer extends Component {
   render() {
     return (
       <footer className="footer">
-        <NavLink to="/Portfolio" activeClassName="active">
+        <NavLink to="/portfolio" activeClassName="active">
           Portfolio
         </NavLink>
-        <NavLink to="/Skills" activeClassName="active">
+        <NavLink to="/skills" activeClassName="active">
           Skills
         </NavLink>
-        <NavLink to="/About" activeClassName="active">
+        <NavLink to="/about" activeClassName="active">
           About
         </NavLink>
         <a target="_blank" rel="noopener noreferrer" href={resume}>

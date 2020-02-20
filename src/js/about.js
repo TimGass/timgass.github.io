@@ -1,15 +1,21 @@
 import React, { Component } from 'react';
 import { HashLink as Link } from 'react-router-hash-link';
+import { withContentRect } from 'react-measure';
+import PropTypes from 'prop-types';
 
-import arrows from '../assets/double-down.png';
+import arrow from '../assets/down.png';
 import Header from './header';
 import Footer from './footer';
 import headshot from '../assets/headshot2.jpg';
 
 class About extends Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     return (
-      <div id="aboutPage" className="pageDiv">
+      <div id="aboutPage" className="pageDiv" ref={this.props.measureRef}>
         <div className="scrollbarTrack">
           <div className="scrollbarThumb" />
         </div>
@@ -18,7 +24,7 @@ class About extends Component {
             <Header />
             <h1 className="title">About</h1>
             <Link to="#me" className="descriptionLink">
-              <img src={arrows} className="arrow-down" />
+              <img src={arrow} className="arrow-down" />
             </Link>
           </div>
         </div>
@@ -76,4 +82,8 @@ class About extends Component {
   }
 }
 
-export default About;
+About.propTypes = {
+  measureRef: PropTypes.func
+}
+
+export default withContentRect('bounds')(About);

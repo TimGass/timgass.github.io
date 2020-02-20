@@ -8,17 +8,6 @@ module.exports = {
     filename: 'bundle.js',
     publicPath: './',
   },
-  devServer: {
-    publicPath: '/',
-    contentBase: path.resolve(__dirname, 'build'),
-    stats: { colors: true },
-    host: '0.0.0.0',
-    port: 3000,
-    open: true,
-    inline: true,
-    hotOnly: true,
-  },
-  devtool: 'inline-source-map',
   module: {
     rules: [
       {
@@ -39,7 +28,12 @@ module.exports = {
             name: '[name].[ext]',
           },
         },
-      }
+      },
+      {
+        test: /\.(jpg|png|gif|svg)$/,
+        loader: 'image-webpack-loader',
+        enforce: 'pre',
+      },
     ],
   },
   plugins: [

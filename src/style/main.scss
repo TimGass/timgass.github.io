@@ -3,6 +3,7 @@
 @import './skills.scss';
 @import './about.scss';
 @import './footer.scss';
+@import './projects.scss';
 @import '~normalize-scss';
 @import url('https://fonts.googleapis.com/css?family=Raleway|Montserrat&display=swap');
 
@@ -16,6 +17,7 @@ body {
   font-size: 100%;
   position: absolute;
   max-width: 1920px;
+  background-color: #fafafa;
 }
 
 h1 {
@@ -42,7 +44,7 @@ a.descriptionLink {
   text-decoration: none;
   display: block;
   position: relative;
-  bottom: -65.5vh;
+  bottom: -66.5vh;
 
   img.arrow-down {
     width: 2.5em;
@@ -86,7 +88,7 @@ div.content {
 
 @media only screen and (min-width: 768px) and (max-width: 1280px) {
   a.descriptionLink {
-    bottom: -31vw;
+    bottom: -55vh;
   }
 }
 
@@ -101,17 +103,17 @@ div.content {
   }
 
   a.descriptionLink {
-    bottom: -8vw;
+    bottom: -2.5vw;
   }
 
   div.scrollbarThumb {
-    display: none;
+    visibility: hidden;
   }
 }
 
-@media only screen and (max-width: 479px) {
+@media only screen and (max-width: 480px) {
   a.descriptionLink {
-    bottom: -52vh;
+    bottom: -54.5vh;
   }
 }
 
