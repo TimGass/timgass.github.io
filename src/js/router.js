@@ -23,7 +23,6 @@ class router extends React.Component {
     let footer = $('footer.footer').outerHeight();
     let page = bounds.height - footer;
     let tab = $('div.scrollbarThumb').height();
-    console.log(tab);
 
     const scrollHandler = () => {
       if (height !== window.innerHeight || width !== window.innerWidth) {
