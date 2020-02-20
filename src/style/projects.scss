@@ -99,7 +99,7 @@
           display: block;
           float: right;
           position: relative;
-          margin: 1.4vh 0;
+          margin: .1em 0 0 .4em;
           background-image: url('../assets/github.png');
           background-position: center;
           background-size: cover;
@@ -218,6 +218,14 @@
         float: unset;
         margin: 0 auto;
       }
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1280px) {
+  #projectsPage div#about {
+    a#code {
+      width: 45%;
     }
   }
 }
