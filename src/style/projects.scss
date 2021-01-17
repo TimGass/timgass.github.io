@@ -1,9 +1,11 @@
 #projectsPage {
   font-size: 1.4em;
+  background-color: white;
 
   div#about {
     width: 70%;
     margin: 0 auto;
+
     h1 {
       margin: 0;
       margin-top: 5vh;
@@ -21,7 +23,8 @@
     img.topImage {
       display: block;
       width: 60%;
-      margin: 5vh auto 0;
+      padding: 5vh 0;
+      margin: 0 auto;
     }
 
     a{
@@ -36,11 +39,25 @@
       color: #000000;
       text-align: center;
 
+      &::after {
+        content: '\A';
+        position: absolute;
+        width: 100%; height:100%;
+        top:0; left:0;
+        background: rgba($color: #000000, $alpha: 0.6);
+        opacity: 0;
+        transition: all .5s;
+        -webkit-transition: all 1s;
+      }
+
       &:hover {
-        background-color: rgba($color: #000000, $alpha: 0.5);
+        &::after {
+          opacity: 1;
+        }
 
         div.descriptionText {
-          display: block;
+          opacity: 1;
+          z-index: 1;
           h3 {
             position: -webkit-sticky;
             position: sticky; 
@@ -67,8 +84,8 @@
         margin-bottom: 1em;
         font-weight: bold;
 
-        &:hover {
-          background-color: unset;
+        &::after {
+          display: none;
         }
       }
 
@@ -83,6 +100,11 @@
         max-width: 100%;
         margin: 0 auto 3em auto;
         box-sizing: border-box;
+        transition: all 1s;
+
+        &::after {
+          display: none;
+        }
 
         p {
           margin: 0;
@@ -121,18 +143,18 @@
     img {
       position: relative;
       width: 100%;
-      z-index: -1;
       display: block;
     }
 
     div.descriptionText {
       width: 100%;
-      display: none;
       position: absolute;
       top: 20vh;
       bottom: 0;
       color: rgba($color: #ffffff, $alpha: 0.95);
       font-size: 1.4em;
+      opacity: 0;
+      transition: all 1s;
 
       &.Acquali.descriptionText-1 {
         top: 15vh;

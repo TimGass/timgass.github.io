@@ -2,14 +2,23 @@
   height: 100%;
 
   .hero-overlay {
-    background-image: url('../assets/whiteboard.jpg');
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    margin: 0;
-    height: 100vh;
-    position: relative;
+    &:before {
+      content: "";
+      display: block;
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100vh;
+      margin: 0;
+      z-index: -10;
+      background: url('../assets/whiteboard.jpg') no-repeat center center;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
 
     .hero {
       background-color: rgba($color: #211200, $alpha: 0.35);
@@ -20,9 +29,11 @@
   }
 
   div#projects {
+    background-color: white;
     ul {
       list-style: none;
-      padding: 0px;
+      padding: 16px 0;
+      margin: 0;
       display: block;
 
       li {
@@ -71,7 +82,6 @@
             0 6px 20px 0 rgba(0, 0, 0, 0.2);
 
           div.project-description {
-            display: none;
             position: absolute;
             top: 8vw;
             text-align: center;
@@ -79,6 +89,8 @@
             font-size: 1.5em;
             width: 100%;
             height: 100%;
+            transition: all 1s;
+            opacity: 0;
 
             p {
               padding: 0;
@@ -94,7 +106,6 @@
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            z-index: -1;
 
             &#park {
               background-image: url('../assets/Park-A-Lot.png');
@@ -126,10 +137,25 @@
             }
           }
 
+          &::after {
+            content: '\A';
+            position: absolute;
+            width: 100%; height:100%;
+            top:0; left:0;
+            background: rgba($color: #000000, $alpha: 0.8);
+            opacity: 0;
+            transition: all .5s;
+            -webkit-transition: all 1s;
+          }
+
           &:hover {
-            background-color: rgba($color: #000000, $alpha: 0.8);
+            &::after {
+              opacity: 1;
+            }
+
             div.project-description {
-              display: block;
+              opacity: 1;
+              z-index: 1;
             }
           }
         }
