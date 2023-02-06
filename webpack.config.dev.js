@@ -17,18 +17,11 @@ module.exports = {
     publicPath: './',
   },
   devServer: {
-    publicPath: '/',
-    contentBase: path.resolve(__dirname, 'build'),
-    stats: { colors: true },
+    static: path.resolve(__dirname, 'build'),
     host: '0.0.0.0',
     port: 3000,
     open: true,
-    inline: true,
-    hotOnly: true,
-    quiet: true,
-    overlay: {
-      warnings: true,
-    },
+    hot: true,
   },
   devtool: 'cheap-module-source-map',
   module: {
