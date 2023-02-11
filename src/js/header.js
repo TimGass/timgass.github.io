@@ -8,13 +8,13 @@ class Header extends Component {
     return (
       <header className="header">
         <div className="headerLeft">
-          <NavLink to="/portfolio" activeClassName="active">
+          <NavLink to="/portfolio">
             Portfolio
           </NavLink>
-          <NavLink to="/skills" activeClassName="active" id="skillsLink">
+          <NavLink to="/skills" id="skillsLink">
             Skills
           </NavLink>
-          <NavLink to="/about" activeClassName="active" id="aboutLink">
+          <NavLink to="/about" id="aboutLink">
             About
           </NavLink>
         </div>

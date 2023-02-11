@@ -1,8 +1,9 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
 
 module.exports = {
-  entry: ['./src/index.js'],
+  entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'build'),
     filename: 'bundle.js',
@@ -13,7 +14,7 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: ['babel-loader', 'eslint-loader'],
+        use: ['babel-loader'],
       },
       {
         test: /\.scss$/,
@@ -21,20 +22,24 @@ module.exports = {
       },
       {
         test: /\.(png|svg|jpg|gif|pdf)$/,
-        use: {
-          loader: 'url-loader',
-          options: {
-            limit: 25000,
-            name: '[name].[ext]',
-          },
-        },
-      },
-      {
-        test: /\.(jpg|png|gif|svg)$/,
-        loader: 'image-webpack-loader',
-        enforce: 'pre',
+        type: 'asset',
       },
     ],
+  },
+  optimization: {
+    minimizer: [
+      new ImageMinimizerPlugin({
+        test: /\.(png|jpg|jpeg|gif)$/i,
+        minimizer: {
+          implementation: ImageMinimizerPlugin.sharpMinify,
+          options: {
+            encodeOptions: {
+              quality: 70,
+            },
+          },
+        },
+      }),
+    ]
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -44,4 +49,5 @@ module.exports = {
       favicon: path.resolve(__dirname, './src/assets/TimGass.png'),
     }),
   ],
+  mode: "production"
 };

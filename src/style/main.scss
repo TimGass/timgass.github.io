@@ -21,6 +21,15 @@ body {
   background-color: #fafafa;
   overflow: -moz-scrollbars-none;
   overflow-y: scroll;
+
+  &::after {
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    z-index: -1;
+    content: url('../assets/down.png') url('../assets/whiteboard.jpg') url('../assets/github.png') url('../assets/team.png') url('../assets/books.jpg') url('../assets/mountain.jpg') url('../assets/ChronophobiaAbout.png') url('../assets/GoalsMain.png') url('../assets/PowellPeraltaAbout.png') url('../assets/park-a-lot-capture.png') url('../assets/Chronophobia.png') url('../assets/ChronophobiaMain.png') url('../assets/GitHubAbout.png') url('../assets/GoalsAbout.png') url('../assets/headshot2.jpg') url('../assets/Park-A-Lot.png') url('../assets/Acquali.png') url('../assets/github-recreation.png') url('../assets/PowellPeralta.png');
+  }
 }
 
 h1 {

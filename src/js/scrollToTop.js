@@ -1,9 +1,8 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
 
 class ScrollToTop extends React.Component {
   componentDidUpdate() {
-    if ((window.location.hash.match(new RegExp('#', 'g')) || []).length < 2) {
+    if ((window.location.hash.match(new RegExp('/', 'g')) || []).length < 2) {
       window.scrollTo(0, 0);
     }
     if (window.innerWidth > 1920 && window.innerHeight > 1080) {
@@ -17,4 +16,4 @@ class ScrollToTop extends React.Component {
   }
 }
 
-export default withRouter(ScrollToTop);
+export default ScrollToTop;

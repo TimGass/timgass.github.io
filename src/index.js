@@ -1,24 +1,12 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import * as ReactDOM from 'react-dom/client';
 import './style/main.scss';
-import { AppContainer } from 'react-hot-loader';
 
 import Router from './js/router';
 
 const render = Component => {
-  ReactDOM.render(
-    <AppContainer>
-      <Component />
-    </AppContainer>,
-    document.getElementById('root')
-  );
+  ReactDOM.createRoot(document.getElementById('root')).render(
+      <Component />);
 };
 
 render(Router);
-
-if (module.hot) {
-  module.hot.accept('./js/router', () => {
-    const nextRouter = require('./js/router').default;
-    render(nextRouter);
-  });
-}

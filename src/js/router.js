@@ -1,22 +1,21 @@
 import React from 'react';
 import {
-  HashRouter as Router,
-  Redirect,
-  Route,
-  Switch,
+  createHashRouter,
+  Navigate,
+  RouterProvider,
+  Routes,
+  Route
 } from 'react-router-dom';
-import { createBrowserHistory } from "history";
 import $ from 'jquery';
+import projectList from './projectList';
 
 import About from './about';
 import Skills from './skills';
-import ScrollToTop from './scrollToTop';
-import PortfolioPage from './portfolioPage';
+import ScrollToTop from './scrollToTop.js';
+import PortfolioPage from './portfolioPage.js';
+import Projects from './projects.js';
 
-const history = createBrowserHistory();
-
-class router extends React.Component {
-
+class Router extends React.Component {
   scrollBarHandler({ bounds }) {
     let width = bounds.width;
     let height = $(window).height();
@@ -195,48 +194,30 @@ class router extends React.Component {
   }
 
   render() {
-    return (
-      <Router history={history}>
-        <ScrollToTop />
-        <Switch>
-          <Redirect
-            from="/"
-            exact
-            to="/portfolio"
-            render={props => (
-              <PortfolioPage {...props} bounds onResize={this.scrollBarHandler} />
-            )}
-          />
-          <Route
-            path="/about"
-            render={props => (
-              <About {...props} bounds onResize={this.scrollBarHandler} />
-            )}
-          />
-          <Route
-            path="/skills"
-            render={props => (
-              <Skills {...props} bounds onResize={this.scrollBarHandler} />
-            )}
-          />
-          <Route
-            path="/portfolio"
-            render={props => (
-              <PortfolioPage {...props} bounds onResize={this.scrollBarHandler} />
-            )}
-          />
-          <Redirect
-            from="*"
-            exact
-            to="/portfolio"
-            render={props => (
-              <PortfolioPage {...props} bounds onResize={this.scrollBarHandler} />
-            )}
-          />
-        </Switch>
-      </Router>
-    );
+    let currentRouter = createHashRouter([
+      {
+        path: "*",
+        element: <Navigate to="/portfolio" />
+      },
+      {
+        path: "/about",
+        element: <About bounds onResize={this.scrollBarHandler} />,
+      },
+      {
+        path: "/skills",
+        element: <Skills bounds onResize={this.scrollBarHandler} />,
+      },
+      {
+        path: "/portfolio",
+        element: <PortfolioPage bounds onResize={this.scrollBarHandler} />,
+      },
+      {
+        path: "/portfolio/:id",
+        element: <PortfolioPage bounds onResize={this.scrollBarHandler} />,
+      }
+    ]);
+    return (<><ScrollToTop /><RouterProvider router={currentRouter} /></>);
   }
 }
 
-export default router;
+export default Router;
